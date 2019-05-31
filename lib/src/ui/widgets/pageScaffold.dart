@@ -27,8 +27,28 @@ class PageScaffold extends StatelessWidget {
       child: ListView(
         children: <Widget>[
           DrawerHeader(
-            child: Center(child: Text("Oh shit... Happy Birthday!")),
-            decoration: BoxDecoration(color: Colors.red),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Container(
+                  child: Image.asset("assets/images/party_icon_400.png"),
+                  width: 100,
+                ),
+                Center(
+                  child: Text(
+                    "Never forget\na birthday!",
+                    style: Theme.of(context).textTheme.headline.copyWith(color: Colors.white, fontStyle: FontStyle.italic),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/drawer_background.png"),
+                fit: BoxFit.cover,
+              )
+            ),
           ),
           ListTile(
             leading: Icon(Icons.import_export),
